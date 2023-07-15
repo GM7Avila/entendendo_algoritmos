@@ -4,10 +4,18 @@
 
 palavra1 = "Osso"
 palavra2 = "Guilherme"
+palavra3 = "Roma é amor!"
 
 def isPalindromo(palavra):
     palavra = palavra.lower() 
 
+    if ' ' in palavra:
+        # caracteres indesejados
+        char_ignore = ' ,.;:?!-'
+        # Compreessão de Listas
+
+        palavra = [c for c in palavra if c not in char_ignore]
+    
     inicio = 0
     fim = len(palavra)-1
 
@@ -28,3 +36,8 @@ if(isPalindromo(palavra2) == True):
     print(palavra2, "-> True")
 else: 
     print(palavra2, "-> False")
+
+if(isPalindromo(palavra3) == True):
+    print(palavra3, "-> True")
+else: 
+    print(palavra3, "-> False")
